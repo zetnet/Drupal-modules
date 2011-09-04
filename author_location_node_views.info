@@ -1,0 +1,8 @@
+name = Author location Node views
+description = Views Relationship of nodes to their author user location. Relate a node to the user who created it.
+core = 6.x
+package = Location
+
+dependencies[] = location_user
+dependencies[] = views
+
