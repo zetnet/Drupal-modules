@@ -1,0 +1,22 @@
+<?php
+/**
+ *  @file
+ * author_location_node_views.module
+ * Load locations from author users in node views
+ */
+
+function author_location_node_views_enable() {
+  // $base_url/help/views/api-default-views :
+  // Set this module's weight to the views module(10) + 1 to make sure its hooks
+  // are invoked in the right order.
+  db_query("UPDATE {system} SET weight = %d WHERE name = 'author_location_node_views' AND type = 'module'", 11);
+}
+/**
+ * Implementation of hook_views_api().
+ */
+function author_location_node_views_views_api() {
+  return array(
+    'api' => 2,
+    //'path' => drupal_get_path('module', 'author_location_node_views') .'/views',
+  );
+}
